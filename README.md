@@ -1,7 +1,7 @@
 Stock Portfolio Tracker
 This Python script allows you to track a portfolio of stocks, calculate various statistics, and visualize the portfolio's performance over time. It fetches historical stock data from Yahoo Finance using the yfinance package and provides insights like weighted dividend yield, CAGR (Compound Annual Growth Rate), positive periods ratio, gain/loss ratio, and more.
 
-##Key Features:
+**Key Features:**
 Historical Stock Data: Fetches stock prices and other relevant data for the stocks you are tracking.
 Portfolio Analysis: Computes and displays portfolio statistics like:
 
@@ -22,7 +22,7 @@ numpy
 You can install the required libraries using the following command:
 pip install yfinance matplotlib pandas numpy
 
-##Usage:
+**Usage:**
 Run the script.
 The script will prompt you to input the start date for your investment (in DDMMYYYY format).
 Specify the number of stocks in your portfolio, their tickers, and the respective weightings (ensure the sum of weightings is 1).
@@ -32,7 +32,7 @@ The portfolio performance, including a graph and a table with the calculated sta
 Disclaimer:
 This script is not financial advice. It uses historical stock data and basic statistical calculations to provide insights into portfolio performance. The results may not be accurate or reflect the actual future performance of the stocks or portfolio. Always consult a financial professional before making investment decisions. The figures returned by this script may be incorrect or misleading, and should not be used as the sole basis for financial decisions.
 
-Example Output:
+**Example Output:**
 Weighted Dividend Yield: 2.56%
 Weighted Beta (Relative to SPY): 1.12
 CAGR: 8.5%
