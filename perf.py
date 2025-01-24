@@ -17,7 +17,7 @@ def calculate_cagr(initial_value, final_value, years):
     return ((final_value / initial_value) ** (1 / years) - 1) * 100  # Return CAGR as a percentage
 
 # Function to plot the stock prices
-def plot_stock_performance(stock_data, ticker):
+def plot_stock_performance(stock_data, ticker, final_price, daily_change_percentage):
     plt.figure(figsize=(10, 6))
     
     # Determine the color of the line based on the trend
@@ -33,6 +33,11 @@ def plot_stock_performance(stock_data, ticker):
     plt.grid(True)
     plt.xticks(rotation=45, ha='right', fontsize=9)
     plt.legend()
+    
+    # Display the current price and daily change percentage below the graph
+    plt.text(0.5, -0.15, f'Price: ${final_price:.2f}, {"up" if daily_change_percentage >= 0 else "down"} {abs(daily_change_percentage):.2f}% today', 
+             fontsize=20, fontweight='bold', ha='center', transform=plt.gca().transAxes)
+
     plt.tight_layout()
     plt.show()
 
@@ -51,6 +56,13 @@ def main():
     performance = final_price - initial_price
     performance_percentage = (performance / initial_price) * 100
 
+    # Calculate daily change percentage
+    if len(stock_data) > 1:
+        previous_close = stock_data['Close'].iloc[-2]
+        daily_change_percentage = ((final_price - previous_close) / previous_close) * 100
+    else:
+        daily_change_percentage = 0  # Not enough data to calculate daily change
+
     # Calculate CAGR
     years = 1  # Since we are looking at a one-year period
     cagr = calculate_cagr(initial_price, final_price, years)
@@ -62,7 +74,7 @@ def main():
     print(f"CAGR: {cagr:.2f}%")
 
     # Plot the stock performance
-    plot_stock_performance(stock_data, ticker)
+    plot_stock_performance(stock_data, ticker, final_price, daily_change_percentage)
 
 # Run the main function
 if __name__ == "__main__":
