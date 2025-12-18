@@ -1,9 +1,9 @@
 
-
 <div style="display: flex; gap: 10px;">
   <img width="1724" height="1142" alt="image" src="https://github.com/user-attachments/assets/fc1034eb-3cea-4a5b-9aa3-9c490e70d253" />
   <img width="908" height="1039" alt="image" src="https://github.com/user-attachments/assets/b5932df2-a1c6-4c82-b836-8080fd9b44d2" />
 </div>
+
 
 Stock Portfolio Tracker
 This Python script allows you to track a portfolio of stocks, calculate various statistics, and visualize the portfolio's performance over time. It fetches historical stock data from Yahoo Finance using the yfinance package and provides insights like weighted dividend yield, CAGR (Compound Annual Growth Rate), positive periods ratio, gain/loss ratio, and more.
